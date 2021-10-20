@@ -22,6 +22,9 @@ UBI_VOLNAME  = "rootfs"
 
 IMAGE_FSTYPES = "tar.gz multiubi wic.gz"
 
+# add tool dependenceis
+do_image_multiubi[depends] += "bc-native:do_populate_sysroot"
+
 # do multiubi last
 IMAGE_TYPEDEP_multiubi += "${IMAGE_FSTYPES}"
 IMAGE_TYPEDEP_multiubi_remove = "multiubi"
